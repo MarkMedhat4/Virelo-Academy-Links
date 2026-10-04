@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Virelo Links — Admin Login</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#071A33">
+  <meta name="color-scheme" content="dark">
+  <link rel="icon" type="image/png" href="/assets/logo/virelo-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body class="admin-body">
+  <div class="bg-mark" aria-hidden="true">
+    <svg viewBox="0 0 100 100" focusable="false"><path class="bg-mark__line" d="M8 10h20l22 56 22-56h20L50 92z"/><path class="bg-mark__fill" d="M8 10h20l22 56 22-56h20L50 92z"/></svg>
+  </div>
+  <div class="bg-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+  <main class="login">
+    <section class="login-card" aria-labelledby="login-heading">
+      <img class="login-card__logo" src="/assets/logo/virelo-logo.png" width="96" height="96" alt="Virelo Academy">
+      <h1 class="login-card__brand" id="login-heading" lang="en">Virelo Links</h1>
+      <p class="login-card__title" data-i18n="loginTitle">Admin Login</p>
+
+      <form id="login-form" novalidate>
+        <div class="field">
+          <label for="username" data-i18n="username">Username</label>
+          <input id="username" name="username" type="text" dir="ltr" autocomplete="username" autocapitalize="none" autocorrect="off" spellcheck="false" maxlength="100" required>
+          <p class="field__error" id="username-error" hidden></p>
+        </div>
+        <div class="field">
+          <label for="password" data-i18n="password">Password</label>
+          <div class="input-group">
+            <input id="password" name="password" type="password" dir="ltr" autocomplete="current-password" maxlength="256" required>
+            <button type="button" class="input-group__btn" id="toggle-pw" aria-pressed="false" aria-controls="password" aria-label="Show password" data-i18n-aria="showPw">
+              <svg class="icon" id="eye-on" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+              <svg class="icon" id="eye-off" viewBox="0 0 24 24" aria-hidden="true" focusable="false" hidden><path d="M17.9 17.9A10.4 10.4 0 0 1 12 19c-6.4 0-10-7-10-7a17.9 17.9 0 0 1 4.1-5M9.9 5.2A9.7 9.7 0 0 1 12 5c6.4 0 10 7 10 7a17.8 17.8 0 0 1-2.2 3.2M1 1l22 22M9.9 9.9a3 3 0 0 0 4.2 4.2"/></svg>
+            </button>
+          </div>
+          <p class="field__error" id="password-error" hidden></p>
+        </div>
+
+        <p class="form-status" id="login-status" role="alert" hidden></p>
+
+        <button type="submit" class="btn btn--primary btn--block" id="login-btn">
+          <span class="spinner" id="login-spinner" hidden aria-hidden="true"></span>
+          <span id="login-btn-label" data-i18n="login">Login</span>
+        </button>
+      </form>
+    </section>
+
+    <div class="lang lang--standalone" role="group" aria-label="Language" data-i18n-aria="langGroup">
+      <button type="button" class="lang__btn" data-lang="en" aria-pressed="true" aria-label="English" data-i18n-aria="langEn">EN</button>
+      <button type="button" class="lang__btn" data-lang="ar" aria-pressed="false" aria-label="Arabic" data-i18n-aria="langAr">AR</button>
+    </div>
+  </main>
+
+  <script type="module" src="/js/admin-login.js"></script>
+</body>
+</html>

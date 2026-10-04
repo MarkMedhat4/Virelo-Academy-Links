@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Virelo Academy | Official Links</title>
+  <meta name="description" content="Official Virelo Academy links — Education, Programming, Computer Science, Future Skills and more.">
+  <meta name="theme-color" content="#071A33">
+  <meta name="color-scheme" content="dark">
+
+  <meta property="og:title" content="Virelo Academy | Official Links">
+  <meta property="og:description" content="Official Virelo Academy links — Education, Programming, Computer Science, Future Skills and more.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Virelo Academy | Official Links">
+  <meta name="twitter:description" content="Official Virelo Academy links — Education, Programming, Computer Science, Future Skills and more.">
+
+  <link rel="icon" type="image/png" href="assets/logo/virelo-logo.png">
+  <link rel="apple-touch-icon" href="assets/logo/virelo-logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- UI icon sprite. Link/social icons are rendered from js/icons.js (the controlled icon system). -->
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-qr" viewBox="0 0 24 24"><path d="M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h3v3h-3zM20 14v7h-3"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></symbol>
+  </svg>
+
+  <!-- Decorative background elements -->
+  <div class="bg-mark" aria-hidden="true">
+    <svg viewBox="0 0 100 100" focusable="false">
+      <path class="bg-mark__line" d="M8 10h20l22 56 22-56h20L50 92z"/>
+      <path class="bg-mark__fill" d="M8 10h20l22 56 22-56h20L50 92z"/>
+    </svg>
+  </div>
+  <div class="bg-dots" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to main content</a>
+
+  <header class="site-header">
+    <img class="brand-mark" src="assets/logo/virelo-logo.png" width="180" height="180" alt="Virelo Academy">
+
+    <div class="toolbar">
+      <div class="lang" role="group" aria-label="Language" data-i18n-aria="langGroup">
+        <button type="button" class="lang__btn" data-lang="en" aria-pressed="true" aria-label="English" data-i18n-aria="langEn">EN</button>
+        <button type="button" class="lang__btn" data-lang="ar" aria-pressed="false" aria-label="Arabic" data-i18n-aria="langAr">AR</button>
+      </div>
+
+      <button type="button" class="btn" id="scan-btn" aria-haspopup="dialog" aria-label="Scan" data-i18n-aria="scan">
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-qr"/></svg>
+        <span class="btn__label" data-i18n="scan">Scan</span>
+      </button>
+
+      <button type="button" class="btn" id="share-btn" aria-label="Share" data-i18n-aria="share">
+        <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-share"/></svg>
+        <span class="btn__label" data-i18n="share">Share</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main" class="page">
+    <section class="hero" aria-labelledby="brand-title">
+      <div class="hero__logo">
+        <img src="assets/logo/virelo-logo.png" width="180" height="180" alt="Virelo Academy logo" fetchpriority="high">
+      </div>
+      <h1 id="brand-title" class="hero__title" lang="en">Virelo Academy</h1>
+      <p class="hero__tagline"><span data-i18n="tag1">WE DON'T COMPETE ON QUALITY.</span><br><span data-i18n="tag2">WE LEAD IT.</span></p>
+      <p class="hero__desc" data-i18n="desc">Premium Education • Programming • Computer Science • Future Skills</p>
+      <div class="divider" aria-hidden="true"></div>
+    </section>
+
+    <!-- Rendered from /api/links (enabled links, sorted by order). Nothing is hard-coded here. -->
+    <nav class="social-nav" aria-label="Social media" data-i18n-aria="socialNav" hidden>
+      <ul class="social" id="social-list"></ul>
+    </nav>
+
+    <nav aria-label="Official links" data-i18n-aria="linksNav">
+      <ul class="card-list" id="link-list" aria-busy="true">
+        <li class="card card--skeleton" aria-hidden="true"><span class="skeleton skeleton--icon"></span><span class="skeleton-body"><span class="skeleton skeleton--line"></span><span class="skeleton skeleton--line skeleton--short"></span></span></li>
+        <li class="card card--skeleton" aria-hidden="true"><span class="skeleton skeleton--icon"></span><span class="skeleton-body"><span class="skeleton skeleton--line"></span><span class="skeleton skeleton--line skeleton--short"></span></span></li>
+        <li class="card card--skeleton" aria-hidden="true"><span class="skeleton skeleton--icon"></span><span class="skeleton-body"><span class="skeleton skeleton--line"></span><span class="skeleton skeleton--line skeleton--short"></span></span></li>
+      </ul>
+      <div class="state" id="links-state" role="status" hidden>
+        <img class="state__mark" src="assets/logo/virelo-logo.png" width="72" height="72" alt="">
+        <p class="state__text" id="links-state-text"></p>
+        <button type="button" class="btn" id="links-retry" data-i18n="retry">Try again</button>
+      </div>
+    </nav>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer__rule" aria-hidden="true"></div>
+    <p class="site-footer__name" lang="en">Virelo Academy</p>
+    <p class="site-footer__tagline"><span data-i18n="tag1">WE DON'T COMPETE ON QUALITY.</span> <span data-i18n="tag2">WE LEAD IT.</span></p>
+    <p class="site-footer__copy" dir="ltr">© <span id="year">2026</span> <span lang="en">Virelo Academy</span></p>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <dialog class="dialog" id="qr-dialog" aria-labelledby="qr-title">
+    <h2 class="dialog__title" id="qr-title" data-i18n="scanT">Scan to open</h2>
+    <div class="dialog__qr" id="qr-code"></div>
+    <p class="dialog__path" dir="ltr">/vireloacademy</p>
+    <button type="button" class="btn" id="qr-close" data-i18n="close">Close</button>
+  </dialog>
+
+  <script src="js/vendor/qrcode.min.js"></script>
+  <script type="module" src="js/script.js"></script>
+</body>
+</html>
